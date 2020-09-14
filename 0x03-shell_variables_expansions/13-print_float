@@ -1,0 +1,2 @@
+#!/bin/bash
+export NUM=$(echo $VAR | awk '{printf ("%.2f\n", $1)}')
