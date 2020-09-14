@@ -1,2 +1,2 @@
 #!/bin/bash
-echo -e "ibase=2;obase=10;$BINARY\n" | bc
+echo -e "ibase=2;$BINARY\n" | bc
