@@ -1,0 +1,10 @@
+!#/bin/bash
+
+for h in {00..12}
+do
+    echo "Hour: $h"
+    for m in {00..59}
+    do
+        echo "$m"
+    done
+done
