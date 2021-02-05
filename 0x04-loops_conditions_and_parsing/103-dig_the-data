@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Print the occurrence ip and http code of differents entrances in a log file
 
 filename="apache-access.log"
 awk '{print $1, $9 |" sort | uniq -c | sort -r"}' $filename 

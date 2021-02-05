@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+#Print the ip and http code of a log file
 filename="apache-access.log"
 awk '{print $1, $9}' $filename
