@@ -1,21 +1,18 @@
 #!/usr/bin/env bash
 #Prints numbers from 1 to 10 
-#"bad luck" for the 4th iteration
-#"good luck" for the 8th iteration
-#"Holberton School" for all other iterations
 
-x=0
+x=1
 
-while [ $x -lt 10 ]
+while [ $x -le 10 ]
 do
-    if [ $x -eq 3 ]
+    if [ $x -eq 4 ]
     then
         echo "bad luck"
-    elif [ $x -eq 7 ]
+    elif [ $x -eq 8 ]
     then
         echo "good luck"
     else
-        echo "Holberton school"
+        echo "Holberton School"
     fi
     (( x++ ))
 done
