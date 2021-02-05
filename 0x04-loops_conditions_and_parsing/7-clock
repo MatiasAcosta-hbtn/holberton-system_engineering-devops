@@ -2,7 +2,7 @@
 #Print the numbers style Clock from 0..59 and 0..12
 
 hours=0
-minutes=0
+minutes=1
 
 while [ $hours -le 12 ]
 do
@@ -13,5 +13,5 @@ do
         (( minutes++ ))
     done
     (( hours++ ))
-    minutes=0
+    minutes=1
 done
