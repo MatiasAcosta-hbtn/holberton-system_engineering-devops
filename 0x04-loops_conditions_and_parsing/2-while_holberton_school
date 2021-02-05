@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# Displays "Holberton School" 10 times using a while loop.
 x=0
 
 while [ $x -lt 10 ]
