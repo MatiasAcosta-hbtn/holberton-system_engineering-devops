@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 #Print the numbers style Clock from 0..59 and 0..12
-for h in {00..12}
+
+hours=0
+minutes=0
+
+while [ $hours -le 12 ]
 do
-    echo "Hour: $h"
-    for m in {00..59}
+    echo "Hour: $hours"
+    while [ $minutes -le 59 ]
     do
-        echo "$m"
+        echo "$minutes"
+        (( minutes++ ))
     done
+    (( hours++ ))
+    minutes=0
 done
