@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 filename="holbertonschool"
 
 if [ -e $filename ]

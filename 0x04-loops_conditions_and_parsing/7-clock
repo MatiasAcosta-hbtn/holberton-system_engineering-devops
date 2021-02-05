@@ -1,5 +1,4 @@
-!#/bin/bash
-
+#!/usr/bin/env bash
 for h in {00..12}
 do
     echo "Hour: $h"

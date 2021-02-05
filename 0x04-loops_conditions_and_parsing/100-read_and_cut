@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 filename="/etc/passwd"
 while read line
 do
