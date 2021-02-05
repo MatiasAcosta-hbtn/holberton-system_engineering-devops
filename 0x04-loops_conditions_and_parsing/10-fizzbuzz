@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #FizzBuzz program
 
-for (( x=0; x<=100; x++ ))
+for (( x=1; x<=100; x++ ))
 do
     if [ $((x % 3)) -eq 0 ] && [ $((x % 5)) -eq 0 ]
     then
