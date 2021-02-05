@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#Print 10 times Holberton School using until loop.
 x=1
 
 until [ $x -gt 10 ]

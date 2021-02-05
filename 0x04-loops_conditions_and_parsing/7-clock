@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Print the numbers style Clock from 0..59 and 0..12
 for h in {00..12}
 do
     echo "Hour: $h"
