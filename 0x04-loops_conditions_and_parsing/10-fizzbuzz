@@ -8,7 +8,7 @@ do
         echo  "FizzBuzz"
     elif [ $((x % 3)) -eq 0 ] 
     then
-        echo "Fizz "
+        echo "Fizz"
     elif [ $((x % 5)) -eq 0 ]
     then
         echo "Buzz"
