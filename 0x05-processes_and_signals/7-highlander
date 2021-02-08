@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #Script with infinity bucle
 msg="I am invincible!!!"
+trap 'echo $msg' SIGTERM
 while "true"
 do
     echo "To infinity and beyond"
     sleep 2
-    trap 'echo $msg' SIGTERM
 done
