@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Script with infinity bucle
+kill -9 "$(pgrep -f ./7-highlander)"
