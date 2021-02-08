@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Script Kill the infinity bucle of ex 4
+
+pkill -f ./4-to_infinity_and_beyon
