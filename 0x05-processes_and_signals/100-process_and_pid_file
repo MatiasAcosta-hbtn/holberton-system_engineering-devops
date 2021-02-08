@@ -3,8 +3,8 @@
 tmp_file="/var/run/holbertonscript.pid"
 echo $$ > $tmp_file
 trap 'echo "Y U no love me?!"' SIGINT
-trap 'echo "I hate the kill command"' SIGTERM
-trap 'rm $tmp_file; exit' SIGTERM SIGQUIT
+trap 'echo "I hate the kill command; rm $tmp_file; exit"' SIGTERM
+trap 'rm $tmp_file; exit' SIGQUIT
 while "true"
 do
     echo "To infinity and beyond"
