@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #Script with infinity bucle
-i=0
-while [ 1 ]
+while "true"
 do
     echo "To infinity and beyond"
     sleep 2
