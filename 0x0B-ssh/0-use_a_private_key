@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-IP="34.75.78.32"
-ssh -i ~/.ssh/holberton ubuntu@$IP
+ssh -i ~/.ssh/holberton ubuntu@34.75.78.32
