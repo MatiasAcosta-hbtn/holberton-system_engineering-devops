@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script that copy an element to a server using scp command
 
-if [ $# -eq 4 ]
+if [[ $# -eq 4 ]]
 then
 	FILE=$1;IP=$2;USERNAME=$3;PATH=$4
 	scp -o StrictHostKeyChecking=no -i "PATH" "$FILE" "$USERNAME"@"$IP":
