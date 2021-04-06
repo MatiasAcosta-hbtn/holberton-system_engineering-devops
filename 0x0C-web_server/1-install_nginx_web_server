@@ -2,5 +2,5 @@
 # Script to install nginx and automatize some functions
 apt-get update
 apt-get install nginx -y
-echo "Holberton School" > index.nginx-debian.html
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
 service nginx restart
