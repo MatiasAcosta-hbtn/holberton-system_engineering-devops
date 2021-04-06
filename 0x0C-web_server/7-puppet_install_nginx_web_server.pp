@@ -1,9 +1,5 @@
 #Configure nginx server
 
-exec { 'apt-get_update':
-  command => 'apt-get update',
-}
-
 package { 'nginx':
   ensure   => 'installed',
   provider => 'apt-get',
@@ -24,8 +20,8 @@ file_line {'default':
 
 service {'nginx':
   ensure     => running,
-  require    => Package['nginx'],
   enable     => true,
-  hasrestart => true,
+  hasrestart => true, 
+  require    => Package['nginx'],
   subscribe  => File_line['redirect_me'],
 }
