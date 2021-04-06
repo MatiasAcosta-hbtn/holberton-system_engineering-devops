@@ -1,9 +1,5 @@
 #  Install and configure Nginx web server
 
-exec { 'apt-get_update':
-  command => 'apt-get update',
-}
-
 package { 'nginx':
   ensure => 'present',
   name   => 'nginx',
@@ -12,7 +8,7 @@ package { 'nginx':
 file { 'index.html':
   ensure  => 'present',
   path    => '/etc/nginx/html/index.html',
-  content => 'Holberton School',
+  content => 'Holberton School\n',
 }
 
 file_line { 'default':
