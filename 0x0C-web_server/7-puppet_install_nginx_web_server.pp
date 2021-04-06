@@ -1,27 +1,27 @@
-#  Install and configure Nginx web server
+#Install and configure nginx server
 
-package { 'nginx':
-  ensure => 'present',
+package {'nginx':
+  ensure => present,
   name   => 'nginx',
 }
 
-file { 'index.html':
-  ensure  => 'present',
-  path    => '/etc/nginx/html/index.html',
+file {'index.html':
+  ensure  => present,
+  path    => '/var/www/html/index.html',
   content => 'Holberton School\n',
 }
 
-file_line { 'default':
+file_line { 'redirect':
   ensure => 'present',
   path   => '/etc/nginx/sites-available/default',
-  after  => 'listen [::]:80 default_server;',
-  line   => 'rewrite /redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;'
+  after  => 'listen 80 default_server;',
+  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
 }
 
-service {'nginx':
+service { 'nginx':
   ensure     => running,
   enable     => true,
   hasrestart => true,
   require    => Package['nginx'],
-  subscribe  => File_line['default'],
+  subscribe  => File_line['redirect'],
 }
