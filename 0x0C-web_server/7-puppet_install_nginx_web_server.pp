@@ -15,28 +15,17 @@ file { 'index.html':
   content => 'Holberton School',
 }
 
-file { '404.html':
-  ensure  => 'present',
-  path    => '/var/www/html/404.html',
-  content => 'Ceci n\'est pas une page',
-}
-
-file {'default':
-    ensure  => 'present',
-    content => 'listen 80;
-    listen [::]:80 default_server;
-    root   /var/www/html;
-    index  index.html index.htm index.nginx-debian.html;
-    rewrite /redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;    
-    error_page 404 /404.html;
-    location /404 {
-      root /var/www/html;
-      internal;
-    }',
-    path    => '/etc/nginx/sites-available/default',
+file_line {'default':
+    ensure => 'present',
+    path   => '/etc/nginx/sites-available/default',
+    after  => 'listen [::]:80 default_server;'
+    line   => 'rewrite /redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent';
 }
 
 service {'nginx':
-  ensure  => running,
-  require => Package['nginx'],
+  ensure     => running,
+  require    => Package['nginx'],
+  enable     => true,
+  hasrestart => true,
+  subscribe  => File_line['redirect_me'],
 }
