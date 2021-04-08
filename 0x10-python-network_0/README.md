@@ -1,1 +1,0 @@
-# Project about networking using python scripts
