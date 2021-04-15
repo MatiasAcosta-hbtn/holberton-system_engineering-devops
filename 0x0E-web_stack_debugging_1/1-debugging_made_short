@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script to fix nginx server to run in port 80
+sed -i "s/listen \[\:\:\]\:8080 default\_server ipv6only\=on;/listen \[\:\:\]\:80 default_server ipv6only\=on;/" /etc/nginx/sites-enabled/default
+service nginx restart
+rm -f /var/run/nginx.pid
