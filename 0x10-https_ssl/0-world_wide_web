@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Script for know about A Records
+
+obtain_info(){
+    lines=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | wc -l)
+    if [ $lines -gt 0 ]; then
+        output=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -1)
+        type=$(echo $output | awk '{ print $4 }')
+        ip=$(echo $output | awk '{ print $5 }')
+        echo "The subdomain $2 is a $type record and points to $ip"
+    fi
+}
+
+if [ $# -eq 2 ];then
+    obtain_info $1 $2
+elif [ $# -eq 1 ];then
+    obtain_info $1 www
+    obtain_info $1 lb-01
+    obtain_info $1 web-01
+    obtain_info $1 web-02
+fi
