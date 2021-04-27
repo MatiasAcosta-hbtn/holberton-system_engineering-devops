@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Script that return the user passed
-id -un $1
+sudo -u $1 whoami
