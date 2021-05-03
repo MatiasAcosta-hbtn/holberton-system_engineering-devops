@@ -20,7 +20,6 @@ if __name__ == '__main__':
             new_list.append({"task": task.get('title'),
                              "completed": task.get('completed'),
                              "username": username})
-        data = {user: new_list}
+        data[user] = new_list
         with open('{}.json'.format(user), 'w') as file:
             json.dump(data, file)
-    
