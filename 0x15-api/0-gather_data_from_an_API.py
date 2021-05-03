@@ -20,4 +20,4 @@ if __name__ == '__main__':
                 text += "\t {}\n".format(task.get('title'))
         print("Employee {} is done with tasks({}/{}):"
               .format(user, completed, len(todo)))
-        print(text)
+        print(text, end="")
