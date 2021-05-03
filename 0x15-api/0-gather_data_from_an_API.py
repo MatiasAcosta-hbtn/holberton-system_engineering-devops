@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Using an API with python"""
 
-import json
 import requests
 from sys import argv
 
