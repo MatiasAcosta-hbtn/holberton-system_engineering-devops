@@ -12,6 +12,7 @@ if __name__ == '__main__':
         user = requests.get('{}/{}'.format(url, argv[1]))
         user = user.json().get('name')
         todo = r.json()
+        print(todo)
         text = ""
         completed = 0
         for task in todo:
